@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,14 +5,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(useMaterial3: true),
-      home: SimpleProject(),
+      home: const SimpleProject(),
     );
   }
 }
@@ -26,34 +24,139 @@ class SimpleProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 10,
-        title: Text("Facebook"),
+        title: const Text(
+          "Facebook",
+          style: TextStyle(
+            color: Colors.blueAccent,
+            fontSize: 25,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
         centerTitle: true,
         leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.menu,
-              size: 33,
-            )),
+          onPressed: () {},
+          icon: const Icon(Icons.menu, color: Colors.blueAccent, size: 30),
+        ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.message,
-                size: 25,
-              )),
+            onPressed: () {},
+            icon: const Icon(Icons.message, color: Colors.blueAccent, size: 26),
+          ),
           IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                size: 25,
-              )),
+            onPressed: () {},
+            icon: const Icon(Icons.search, color: Colors.blueAccent, size: 30),
+          ),
         ],
       ),
-      body: Center(
-        child: Text(
-          "Hello, Ali 👋",
-          style: TextStyle(fontSize: 40),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.blueGrey,
+              ),
+              height: 322,
+              width: double.infinity,
+              child: Text(
+                "family start",
+                style: TextStyle(color: Colors.white, fontSize: 44),
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.blueGrey,
+                    ),
+                    height: 100,
+                    width: 150,
+                    child: Text(
+                      "Moustafa",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 23),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.blueGrey,
+                    ),
+                    height: 100,
+                    width: 150,
+                    child: Text(
+                      "Modather",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 23),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.blueGrey,
+                    ),
+                    height: 100,
+                    width: 150,
+                    child: Text(
+                      "Malika",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 23),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.blueGrey,
+                    ),
+                    height: 100,
+                    width: 150,
+                    child: Text(
+                      "Tefa",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.only(left: 23),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.blueGrey,
+                    ),
+                    height: 100,
+                    width: 150,
+                    child: Text(
+                      "DoDo",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.blueGrey,
+              ),
+              height: 322,
+              width: double.infinity,
+              child: Text(
+                "family end",
+                style: TextStyle(color: Colors.white, fontSize: 44),
+              ),
+            ),
+          ],
         ),
       ),
     );
